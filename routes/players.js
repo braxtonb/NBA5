@@ -3,10 +3,10 @@ var mongoose = require('mongoose');
 var router = express.Router();
 var twit = require('twitter'),
 		twitter = new twit({
-			consumer_key: '',
-			consumer_secret: '',
-			access_token_key: '',
-			access_token_secret: ''
+			consumer_key: 'o5jN3VD438bWJgJQvZMj5YgZO',
+			consumer_secret: 'hCLUULTjwTu68OeSSb120BilJmvzba30ItBD8PTtko5VCOQEVk',
+			access_token_key: '733711908457619456-oBpLPp2aSSqykLoRxc31glljySYmeBF',
+			access_token_secret: 'soSPcP4wODOAUwd8IhArubASUPV11r8ACBH0ZBIFfWl4N'
 		});
 
 /* Mongoose Models */ 
