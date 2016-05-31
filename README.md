@@ -6,7 +6,7 @@ A MEAN Stack web application allowing users to create their own team of 6 NBA pl
 
 ### Getting Started Using The Site
 
-Click the `Create Account` link to get create a new username and password combination
+Click the `Create Account` link to create a new username and password combination
 
 Click the `Players` link to select and learn more about your favorite All-Stars
 
