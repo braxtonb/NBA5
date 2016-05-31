@@ -11,7 +11,7 @@ require('./models/Player');
 require('./models/User');
 require('./config/passport');
 
-mongoose.connect('mongodb://localhost/NBA5');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/NBA5');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
