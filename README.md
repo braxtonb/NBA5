@@ -1,14 +1,20 @@
 # NBA5
-by Braxton Brewton | braxtonbrewton@gmail.com
+by Braxton Brewton | braxtonbrewton@gmail.com | https://nba5.herokuapp.com
 
 ### What is this?
 A MEAN Stack web application allowing users to create their own team of 6 NBA players from 12 All-Stars!
 
-### Installing node modules
+### Getting Started Using The Site
 
-In your terminal, run `npm install`
+Click the `Create Account` link to get create a new username and password combination
+
+Click the `Players` link to select and learn more about your favorite All-Stars
+
+Click the `Favorites` link to have quick viewing access to your favorite All-Stars or deselect All-Stars to manage your favorites combination!
 
 ### Setting up your local instance
+
+In your terminal, run `npm install` to install project dependencies from package.json
 
 Create a directory named `data` in the project's root directory. `NBA5/data` is the directory destination for MongoDB's documents in this application.
 
