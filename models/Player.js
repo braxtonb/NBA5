@@ -13,7 +13,9 @@ var PlayerSchema = new mongoose.Schema({
 	tweets: [],
 	screenName: String,
 	jersey: String,
-	jerseyStore: String
+	jerseyStore: String,
+	facebook: String,
+	instagram: String
 });
 
 mongoose.model('Player', PlayerSchema);
