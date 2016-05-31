@@ -1,0 +1,71 @@
+nav {
+	&.navbar.navbar-default {
+		margin: 0;
+		background: #0A3665;
+		background: #F07575; /* fallback color if gradients are not supported */
+	  background: -webkit-linear-gradient(left, black 0%, #0E486B 49.5%, #FFFFFF, #84263F 50.5%, black 100%); /* For Chrome 25 and Safari 6, iOS 6.1, Android 4.3 */
+	  background:    -moz-linear-gradient(left, black 0%, #0E486B 49.5%, #FFFFFF, #84263F 50.5%, black 100%); /* For Firefox (3.6 to 15) */
+	  background:      -o-linear-gradient(left, black 0%, #0E486B 49.5%, #FFFFFF, #84263F 50.5%, black 100%); /* For old Opera (11.1 to 12.0) */ 
+	  background:         linear-gradient(left, black 0%, #0E486B 49.5%, #FFFFFF, #84263F 50.5%, black 100%); /* Standard syntax; must be last */
+	  -webkit-border-image:  -webkit-linear-gradient(left, black 0%, #0E486B 49.5%, #FFFFFF, #84263F 50.5%, black 100%);
+    -moz-border-image: 				-moz-linear-gradient(left, black 0%, #0E486B 49.5%, #FFFFFF, #84263F 50.5%, black 100%);    
+    -o-border-image: 						-o-linear-gradient(left, black 0%, #0E486B 49.5%, #FFFFFF, #84263F 50.5%, black 100%);
+    border-image: 								 linear-gradient(left, black 0%, #0E486B 49.5%, #FFFFFF, #84263F 50.5%, black 100%);
+		border-radius: 0;
+		.navbar-header {
+			display: inline-block;
+		}
+	}
+	ul {
+		&.nav {
+			// display: inline-block;
+		}
+	}
+	a {
+		&.navbar-brand {
+			padding: 0;
+		}
+	}
+	li {
+		&.nav-font {
+			border-left: 1px solid #3B5E83;
+			// display: inline-block;
+			&:first-child {
+				border: none;
+			}
+			a {
+				color: white !important;
+			}
+		}
+	}
+	li {
+		transition: background-color .3s ease-in;
+		&:hover {
+			background-color: #0E486B !important;
+		}
+		&.dropdown {
+			a.dropdown-toggle {
+				border-left: 1px solid #3B5E83;
+				color: white !important;
+				&:hover {
+					color: white !important;
+					background-color: #0E486B !important;
+				}
+				&.active {
+					background-color: #0E486B !important;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 843px) {
+	nav {
+		li.nav-font {
+			border-left: none;
+		}
+		.mobile-padding {
+			padding-left: 10px;
+		}
+	}
+}

@@ -1,0 +1,68 @@
+@mixin translate($x, $y) {
+	-webkit-transform: translate($x, $y); /* IE 9 */
+	-ms-transform: translate($x, $y); /* Chrome, Safari, Opera */
+	transform: translate($x, $y);
+}
+
+/* inject:scss */ 
+@import "partials/_footer.scss"; 
+@import "partials/_index.scss"; 
+@import "partials/_individual.scss"; 
+@import "partials/_navbar.scss"; 
+@import "partials/_players.scss"; 
+@import "partials/_profile.scss"; 
+/* endinject */ 
+
+body {
+	font-family: sans-serif;
+	font-weight: 300;
+}
+
+.flex-container {
+	display: flex;
+	.flex-col-fill {
+		flex: 1;
+	}
+}
+
+.container--star {
+	position: absolute;
+	top: 10px;
+	right: 0;
+	font-size: 30px;
+	@include translate(-30%, 0);
+	color: white;
+	z-index: 100;
+	transition: all 0.5s ease-in;
+	&:hover {
+		span.glyphicon-star-empty:before {
+			content:"\e006";
+			color: gold;
+		}
+	}
+	.wrapper--star {
+		position: relative;
+		span {
+			cursor: pointer;
+			&.favorites-feedback {
+				position: absolute;
+				padding: 3px 0;
+				font-size: .3em;
+				width: 64px;
+				top: 35px;
+		    left: -25px;
+		    text-align: center;
+		    color: white;
+		    background-color: #3d3d3d;
+		    border-radius: 4px;
+			}
+			&.glyphicon-triangle-top {
+				position: absolute;
+				font-size: .3em;
+				color: #3d3d3d;
+				top: 30px;
+				left: 10px;
+			}
+		}
+	}
+}

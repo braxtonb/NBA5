@@ -1,0 +1,148 @@
+<!-- /templates/individual.html -->
+
+<nba-nav></nba-nav>
+<div class="container-fluid page--individual nopadding" style="background: url(https://s3.amazonaws.com/nbaproject/nbalogo.jpg) repeat center fixed;">
+  <div class="col-xs-10 col-xs-offset-1 container--individual" style="background: white;">
+    <div class="col-xs-12 nopadding wrapper--social-media">
+      <div class="col-xs-4 nopadding">
+      <a ng-href="https://twitter.com/{{ individual.screenName }}">
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+      </a>
+      </div>
+      <div class="col-xs-4 nopadding">
+        <a ng-href="{{ individual.facebook }}">
+          <i class="fa fa-facebook-official" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="col-xs-4 nopadding">
+      <a ng-href="{{ individual.instagram }}">
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+      </a>
+      </div>
+    </div>
+    <div class="col-xs-12 page-header">
+      <h1>{{ individual.name }}</h1>
+    </div>
+    <div class="col-xs-12 wrapper--individual-stats nopadding">
+      <h3>Stats</h3>
+      <ul class="clearfix">
+        <li class="individual-stat col-xs-6 col-sm-4">
+          <dl>
+            <dt class="individual-stat-header">PPG</dt>
+            <dd class="individual-stat-value" style="border-color: {{ individual.frontColor }}">{{ individual.ppg }}</dd>
+          </dl>
+        </li>
+        <li class="individual-stat col-xs-6 col-sm-4">
+          <dl>
+            <dt class="individual-stat-header">APG</dt>
+            <dd class="individual-stat-value" style="border-color: {{ individual.frontColor }}">{{ individual.apg }}</dd>
+          </dl>
+        </li>
+        <li class="individual-stat col-xs-6 col-sm-4">
+          <dl>
+            <dt class="individual-stat-header">RPG</dt>
+            <dd class="individual-stat-value" style="border-color: {{ individual.frontColor }}">{{ individual.rpg }}</dd>
+          </dl>
+        </li>
+        <li class="individual-stat col-xs-6 col-sm-4">
+          <dl>
+            <dt class="individual-stat-header">SPG</dt>
+            <dd class="individual-stat-value" style="border-color: {{ individual.frontColor }}">{{ individual.spg }}</dd>
+          </dl>
+        </li>
+        <li class="individual-stat col-xs-6 col-sm-4">
+          <dl>
+            <dt class="individual-stat-header">BPG</dt>
+            <dd class="individual-stat-value" style="border-color: {{ individual.frontColor }}">{{ individual.bpg }}</dd>
+          </dl>
+        </li>
+        <li class="individual-stat col-xs-6 col-sm-4">
+          <dl>
+            <dt class="individual-stat-header">FGP</dt>
+            <dd class="individual-stat-value" style="border-color: {{ individual.frontColor }}">{{ individual.fgp }}</dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+    <div class="individual-highlight clearfix col-xs-12">
+      <h3 style="text-align: center;">Highlights</h3>
+      <div class="video-image embed-responsive embed-responsive-16by9">
+        <iframe class="media-object img-responsive" ng-src="{{ individual.highlight | trusted }}" frameBorder="0">
+        </iframe>
+      </div>
+    </div>
+    <div class="container--jersey col-xs-12 nopadding">
+      <h3 class="col-xs-12 visible-xs fadein fadein-left">Buy Your {{ individual.name }} Jersey!</h3>
+      <!-- <a class="wrapper--jersey" ng-href="{{ individual.jerseyStore }}"> -->
+        <img class="col-xs-12 col-sm-6 fadein fadein-right img-responsive" ng-src="{{ individual.jersey }}" alt="Jersey Image">
+      <!-- </a> -->
+      <div class="col-sm-6 container--individual-store hidden-xs">
+        <div class="wrapper--individual-store">
+          <h3 class="col-sm-12 hidden-xs fadein fadein-left">Buy Your {{ individual.name }} Jersey!</h3>
+          <a ng-href="{{ individual.jerseyStore }}">Visit NBA Store</a>
+        </div>
+      </div>
+      <div class="col-xs-12 mobile--individual-store visible-xs">
+        <a ng-href="{{ individual.jerseyStore }}">Visit NBA Store</a>
+      </div>
+    </div>
+    <twitter-feed></twitter-feed>
+    <!-- <div class="col-xs-8 wrapper--individual-stats nopadding" style="background: -webkit-linear-gradient(left, black 0%, {{ individual.backColor }} 50%, #FFFFFF, {{ individual.frontColor }} 51%, black 100%); /* For Chrome 25 and Safari 6, iOS 6.1, Android 4.3 */
+      background:    -moz-linear-gradient(left, black 0%, {{ individual.backColor }} 50%, #FFFFFF, {{ individual.frontColor }} 51%, black 100%); /* For Firefox (3.6 to 15) */
+      background:      -o-linear-gradient(left, black 0%, {{ individual.backColor }} 50%, #FFFFFF, {{ individual.frontColor }} 51%, black 100%); /* For old Opera (11.1 to 12.0) */ 
+      background:         linear-gradient(left, black 0%, {{ individual.backColor }} 50%, #FFFFFF, {{ individual.frontColor }} 51%, black 100%); /* Standard syntax; must be last */"> -->
+    <!-- <div class="individual-highlight clearfix col-xs-12 nopadding">
+        <div class="video-image embed-responsive embed-responsive-16by9">
+          <iframe class="media-object img-responsive" ng-src="https://www.youtube.com/embed/7XlG6bVDUfU" frameBorder="0">
+          </iframe>
+        </div>
+      </div> -->
+    <!-- <div class="col-xs-6">
+        <div class="col-xs-12 individual-stat nopadding">
+          <div class="front">
+            <span class="col-xs-6" style="text-align: left;">PPG</span>
+            <span class="col-xs-6" style="text-align: right;">{{ individual.ppg }}</span>
+          </div>
+        </div>
+        <div class="col-xs-12 individual-stat nopadding">
+          <div class="front">
+            <span class="col-xs-6" style="text-align: left;">APG</span>
+            <span class="col-xs-6" style="text-align: right;">{{ individual.apg }}</span>
+          </div>
+        </div>
+        <div class="col-xs-12 individual-stat nopadding">
+          <div class="front">
+            <span class="col-xs-6" style="text-align: left;">RPG</span>
+            <span class="col-xs-6" style="text-align: right;">{{ individual.rpg }}</span>
+          </div>
+        </div>
+        <div class="col-xs-12 individual-stat nopadding">
+          <div class="front">
+            <span class="col-xs-6" style="text-align: left;">SPG</span>
+            <span class="col-xs-6" style="text-align: right;">{{ individual.spg }}</span>
+          </div>
+        </div>
+        <div class="col-xs-12 individual-stat nopadding">
+          <div class="front">
+            <span class="col-xs-6" style="text-align: left;">BPG</span>
+            <span class="col-xs-6" style="text-align: right;">{{ individual.bpg }}</span>
+          </div>
+        </div>
+        <div class="col-xs-12 individual-stat nopadding">
+          <div class="front">
+            <span class="col-xs-6" style="text-align: left;">FGP</span>
+            <span class="col-xs-6" style="text-align: right;">{{ individual.fgp }}</span>
+          </div>
+        </div>
+      </div> -->
+    <!-- </div>  -->
+  </div>
+</div>
+<my-footer></my-footer>
+</div>
+<!-- <div class="col-xs-12 individual-stat nopadding">
+          <span class="neither">{{ individual.name }}</span>
+        </div>
+        <div class="col-xs-12 individual-stat nopadding">
+          <div class="neither">{{ individual.team }}</div>
+        </div>

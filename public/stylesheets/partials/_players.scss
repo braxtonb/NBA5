@@ -1,0 +1,81 @@
+div.wrapper--player-card {
+	overflow: hidden;
+	position: relative;
+	a {
+		cursor: pointer;
+		transition: all 0.5s ease-in;
+		&.player-card {
+			display: block;
+			img {
+				-webkit-filter: grayscale(100%);
+				filter: grayscale(100%);
+			}
+			p {
+				&.player-card-name {
+					position: absolute;
+					top: 35px;
+					@include translate(30%, 0%);
+					color: transparent;
+					transition: all 0.5s ease-in;
+				}
+			}
+		}
+		&:hover {
+			-moz-transform: scale(1.1);
+			-webkit-transform: scale(1.1);
+			transform: scale(1.1);
+			&.player-card {
+				img {
+					-webkit-filter: grayscale(0%);
+					filter: grayscale(0%);
+				}
+			}
+			p {
+				&.player-card-name {
+					color: white;
+				}
+			}
+		}
+	}
+	.container--star {
+		position: absolute;
+		top: 10px;
+		right: 0;
+		font-size: 30px;
+		@include translate(-30%, 0);
+		color: white;
+		z-index: 100;
+		transition: all 0.5s ease-in;
+		&:hover, &.favorited {
+			span.glyphicon-star-empty:before {
+				content:"\e006";
+				color: gold;
+			}
+		}
+		.wrapper--star {
+			position: relative;
+			span {
+				cursor: pointer;
+				&.favorites-feedback {
+					position: absolute;
+					padding: 3px 0;
+					font-size: .3em;
+					width: 64px;
+					top: 35px;
+			    left: -25px;
+			    text-align: center;
+			    color: white;
+			    background-color: #3d3d3d;
+			    border-radius: 4px;
+				}
+				&.glyphicon-triangle-top {
+					position: absolute;
+					font-size: .3em;
+					color: #3d3d3d;
+					top: 30px;
+					left: 10px;
+				}
+			}
+		}
+	}
+}

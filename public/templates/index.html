@@ -1,0 +1,16 @@
+<!-- /templates/index.html -->
+
+<nba-nav></nba-nav>
+<div class="container-fluid nopadding">
+  <carousel class="col-xs-12 nopadding" active="active" interval="myInterval" no-wrap="noWrapSlides">
+    <slide ng-repeat="slide in slides track by $index" index="$index">
+      <a ng-href="{{ slide.link }}">
+        <img class="img-responsive" ng-src="{{ slide.image }}" style="margin:auto;">
+        <div class="carousel-caption">
+          <p>{{ slide.text }}</p>
+        </div>
+      </a>
+    </slide>
+  </carousel>
+  <my-footer></my-footer>
+</div>

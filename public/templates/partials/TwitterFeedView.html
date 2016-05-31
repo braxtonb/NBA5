@@ -1,0 +1,58 @@
+<!-- /templates/partials/TwitterFeedView.html -->
+
+<div class="outer-container--tweets col-xs-10 col-xs-offset-1 nopadding">
+  <h3>{{ individual.name }}'s Twitter Feed</h3>
+  <div class="container--tweets nopadding">
+    <ul class="wrapper--tweets col-xs-12 nopadding">
+      <li class="tweet" ng-repeat="tweet in individual.tweets">
+        <div class="tweet-header flex-container">
+          <div class="flex-col">
+            <a class="tweet-user-link" ng-href="https://twitter.com/{{ tweet.user.screen_name }}">
+              <img ng-src="{{ tweet.user.profile_image_url_https }}" alt="Profile Image">
+            </a>
+          </div>
+          <div class="flex-col-fill" style="display: inline-block;">
+            <div>
+              <a class="tweet-user-link" ng-href="https://twitter.com/{{ tweet.user.screen_name }}">
+                <span class="tweet-name">{{ tweet.user.name }}</span>
+              </a>
+              <span class="tweet-date">{{ tweet.created_at | limitTo:6:4 }}</span>
+            </div>
+            <a class="tweet-user-link" ng-href="https://twitter.com/{{ tweet.user.screen_name }}">
+              <span class="tweet-screen-name">@{{ tweet.user.screen_name }}</span>
+            </a>
+          </div>
+        </div>
+        <br>
+        <div class="wrapper--tweet-body">
+          <a ng-href="https://twitter.com/statuses/{{ tweet.id_str }}">
+            <p class="tweet-text">{{ tweet.text }}</p>
+          </a>
+          <hr style="margin-bottom: 5px;">
+          <div class="wrapper--tweet-footer flex-container">
+            <span ng-show="tweet.favorite_count !== null" class="glyphicon glyphicon-heart"></span> &nbsp;
+            <span ng-show="tweet.favorite_count !== null" class="tweet-count">
+            {{ tweet.favorite_count }}
+            </span> &nbsp; &nbsp;
+            <span class="glyphicon glyphicon-retweet" ng-show="tweet.retweet_count !== null"></span> &nbsp;
+            <span ng-show="tweet.retweet_count !== null" class="tweet-count">
+            {{ tweet.retweet_count }}
+            </span>
+            <div class="tweet-footer-symbols flex-col-fill">
+              <i class="fa fa-reply" aria-hidden="true"></i>
+              <div class="wrapper--retweet">
+                <span ng-click="retweet(tweet.id_str);$parent.selectedRetweet = $index;$parent.selectedFavorite = -1" class="glyphicon glyphicon-retweet"></span>
+                <span ng-show="$parent.selectedRetweet === $index;" class="glyphicon glyphicon-triangle-top"></span>
+                <span ng-show="$parent.selectedRetweet === $index;" class="favorites-feedback">{{ message }}</span>
+              </div>
+              <div class="wrapper--favorite">
+                <span ng-click="favoriteTweet(tweet.id_str);$parent.selectedFavorite = $index; $parent.selectedRetweet = -1" class="glyphicon glyphicon-heart"></span>
+                <span ng-show="$parent.selectedFavorite === $index" class="glyphicon glyphicon-triangle-top"></span>
+                <span ng-show="$parent.selectedFavorite === $index" class="favorites-feedback">{{ message }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+  </div>
+</div>
