@@ -24,3 +24,5 @@ Run `gulp` to start the task manager which:
   3. Lints all javascript
   4. Compiles Sass into css
   5. Performs javascript and css file injections
+
+Note: This web application is in progress.
